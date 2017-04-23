@@ -3,10 +3,6 @@
   "version": "1.0.0",
   "description": "DataAPI",
   "main": "src/index.js",
-  "scripts": {
-    "start": "nodemon src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/victormelnyk/data_api.git"
@@ -17,5 +13,15 @@
     "url": "https://github.com/victormelnyk/data_api/issues"
   },
   "homepage": "https://github.com/victormelnyk/data_api#readme",
-  "dependencies": {}
+  "devDependencies": {
+    "@types/node": "^7.0.13",
+    "nodemon": "^1.11.0",
+    "ts-node": "^3.0.2",
+    "typescript": "^2.2.2"
+  },
+  "scripts": {
+    "start": "npm run build",
+    "build": "nodemon --exec ./node_modules/.bin/ts-node -- ./src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
 }
